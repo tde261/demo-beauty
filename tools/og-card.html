@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<title>OG-карточка «Люмьер»</title>
+<style>
+  @page { size: 1200px 630px; margin: 0; }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+  }
+
+  body {
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    color: #201d1b;
+    background: #fdfbf9;
+  }
+
+  .card {
+    position: relative;
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    background:
+      radial-gradient(720px 520px at 6% -12%, #ffffff 0%, rgba(255,255,255,0) 62%),
+      radial-gradient(640px 560px at 46% 118%, #f7e9e3 0%, rgba(247,233,227,0) 66%),
+      linear-gradient(104deg, #fdfbf9 0%, #fbf6f3 58%, #f7efec 100%);
+  }
+
+  /* мягкое свечение слева от фотографии */
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(480px 480px at 66% 46%, rgba(181,121,106,0.14), rgba(181,121,106,0) 70%);
+    pointer-events: none;
+  }
+
+  /* тонкая внутренняя рамка */
+  .card::after {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border: 1px solid rgba(181, 121, 106, 0.24);
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  .content {
+    position: relative;
+    z-index: 3;
+    width: 700px;
+    height: 100%;
+    padding: 56px 0 50px 74px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* ---------- шапка ---------- */
+  .brand { display: block; }
+
+  .brand-name {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 29px;
+    line-height: 1;
+    letter-spacing: 0.19em;
+    color: #201d1b;
+  }
+
+  .brand-sub {
+    margin-top: 9px;
+    font-size: 10.5px;
+    line-height: 1;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #b5796a;
+    font-weight: 600;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 26px;
+    padding: 9px 17px 9px 14px;
+    border: 1px solid rgba(181, 121, 106, 0.32);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.66);
+    font-size: 13px;
+    line-height: 1;
+    letter-spacing: 0.015em;
+    color: #6f6a65;
+    white-space: nowrap;
+  }
+
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #8a9a7b;
+    box-shadow: 0 0 0 4px rgba(138, 154, 123, 0.16);
+  }
+
+  h1 {
+    margin-top: 18px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 66px;
+    font-weight: 400;
+    line-height: 1.035;
+    letter-spacing: -0.022em;
+    color: #201d1b;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: #a9685a;
+  }
+
+  .services {
+    margin-top: 16px;
+    font-size: 19px;
+    line-height: 1.5;
+    letter-spacing: 0.005em;
+    color: #6f6a65;
+  }
+
+  .services b { color: #201d1b; font-weight: 600; }
+
+  /* ---------- низ ---------- */
+  .cta-row {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 28px 16px 30px;
+    border-radius: 999px;
+    background: #b5796a;
+    color: #ffffff;
+    font-size: 16.5px;
+    font-weight: 600;
+    letter-spacing: 0.012em;
+    box-shadow: 0 14px 30px rgba(150, 90, 75, 0.3);
+    white-space: nowrap;
+  }
+
+  .cta svg { display: block; }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+  }
+
+  .stars {
+    font-size: 15px;
+    letter-spacing: 2px;
+    color: #b5796a;
+    line-height: 1;
+  }
+
+  .rating b {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 1;
+    color: #201d1b;
+  }
+
+  .rating span {
+    font-size: 12.5px;
+    line-height: 1.25;
+    color: #6f6a65;
+    max-width: 104px;
+    white-space: normal;
+  }
+
+  .address {
+    margin-top: 17px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 13.5px;
+    letter-spacing: 0.02em;
+    color: #8a837c;
+  }
+
+  .address svg { display: block; flex: none; }
+
+  /* ---------- фото ---------- */
+  .photo {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    width: 500px;
+    height: 630px;
+    overflow: hidden;
+    background: #e9ddd6;
+  }
+
+  .photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 54% 32%;
+  }
+
+  /* растворяем левый край фото в фоне */
+  .photo-fade {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, #fbf6f3 0%, rgba(251,246,243,0.92) 8%, rgba(251,246,243,0) 34%),
+      linear-gradient(0deg, rgba(28, 18, 12, 0.58) 0%, rgba(28, 18, 12, 0.22) 20%, rgba(28, 18, 12, 0) 46%);
+    pointer-events: none;
+  }
+
+  /* УТП поверх фото */
+  .photo-note {
+    position: absolute;
+    right: 38px;
+    bottom: 38px;
+    z-index: 4;
+    text-align: right;
+    color: #ffffff;
+    text-shadow: 0 1px 12px rgba(30, 18, 12, 0.35);
+  }
+
+  .photo-note b {
+    display: block;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+  }
+
+  .photo-note span {
+    display: block;
+    margin-top: 5px;
+    font-size: 11px;
+    letter-spacing: 0.19em;
+    text-transform: uppercase;
+    opacity: 0.82;
+  }
+
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    opacity: 0.045;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+
+    <div class="photo">
+      <img src="../images/service-face.jpg" alt="">
+      <div class="photo-fade"></div>
+      <div class="photo-note">
+        <b>Красота<br>в деталях</b>
+        <span>уход · макияж · волосы</span>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="top">
+        <div class="brand">
+          <div class="brand-name">ЛЮМЬЕР</div>
+          <div class="brand-sub">салон красоты · Москва</div>
+        </div>
+
+        <div class="badge">
+          <span class="dot"></span>
+          Арбат · есть свободные окна на этой неделе
+        </div>
+
+        <h1>Красота,<br>в которой вы<br><em>узнаёте себя</em></h1>
+
+        <p class="services">
+          <b>Стрижки</b> · окрашивание · маникюр<br>
+          уход за лицом · макияж и брови
+        </p>
+      </div>
+
+      <div class="bottom">
+        <div class="cta-row">
+          <div class="cta">
+            Записаться онлайн
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
+            </svg>
+          </div>
+
+          <div class="rating">
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <b>4,9</b>
+            <span>640+ отзывов<br>на Яндекс Картах</span>
+          </div>
+        </div>
+
+        <div class="address">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
+          Москва, ул. Арбат, 22 · 5 минут от метро · ежедневно 10:00–21:00
+        </div>
+      </div>
+    </div>
+
+    <div class="grain"></div>
+  </div>
+</body>
+</html>
